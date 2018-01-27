@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  EntryPoint:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: 
+      CodeUri: 
+      Runtime: java8
+      Timeout: 60
+      MemorySize: 256
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref DataTable
+          QUEUE_NAME: !Ref SQSQueue
+          REGION_NAME: "eu-central-1"
+          API_KEY:  ""
+          PUMP_API: ""
+      Policies:
+        - AWSLambdaExecute
+        - DynamoDBCrudPolicy:
+            TableName: !Ref EstimationTable
+        - AmazonSQSFullAccess    
+      
+  EstimationTable:
+    Type: 'AWS::DynamoDB::Table'
+    DeletionPolicy: Retain
+    Properties:
+      AttributeDefinitions:
+        - 
+          AttributeName: dataId
+          AttributeType: S
+      KeySchema:
+        -
+          AttributeName: dataId
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+  SQSQueue:      
+    Type: "AWS::SQS::Queue"
