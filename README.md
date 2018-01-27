@@ -19,7 +19,7 @@ https://github.com/awslabs/aws-sam-local#installation
 
 Create a .jar file with `mvn package shade:shade ` 
 
-- Set the path to your shaded  .jar file in your sam local [template.yaml](./template.yaml) file at `CodeUri`.
+- Set the path to your shaded  .jar file in your sam local [template.yaml](./serverless.yaml) file at `CodeUri`.
 
 
 - Run `sam local invoke --event {event}` 
