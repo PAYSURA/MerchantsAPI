@@ -1,7 +1,7 @@
 package com.paysura.merchants.service;
 
-import com.paysura.merchants.interfaces.IAlgorithm;
+import com.paysura.merchants.interfaces.IAlgorithmClient;
 
-public class AlgorithmClient implements IAlgorithm{
+public class AlgorithmClient implements IAlgorithmClient{
 
 }
