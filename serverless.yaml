@@ -16,14 +16,14 @@ Resources:
           QUEUE_NAME: !Ref SQSQueue
           REGION_NAME: "eu-central-1"
           API_KEY:  ""
-          PUMP_API: ""
+          API:""
       Policies:
         - AWSLambdaExecute
         - DynamoDBCrudPolicy:
-            TableName: !Ref EstimationTable
+            TableName: !Ref TablePaysura
         - AmazonSQSFullAccess    
       
-  EstimationTable:
+  TablePaysura:
     Type: 'AWS::DynamoDB::Table'
     DeletionPolicy: Retain
     Properties:
