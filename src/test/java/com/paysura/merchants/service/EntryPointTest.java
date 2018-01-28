@@ -8,6 +8,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.paysura.merchants.model.RequestModel;
 
 public class EntryPointTest {
 
@@ -23,7 +24,7 @@ public class EntryPointTest {
 		Context ctx = createContext();
 		Injector injector = Guice.createInjector(new EntryPointTestInjector());
 		handler = new EntryPoint(injector);
-	    handler.handleRequest(new Object(), ctx);
+	    handler.handleRequest(new RequestModel(), ctx);
 	    //TODO: define Input of entrypoint 
 		//assertEquals(response, "response");
 	}
