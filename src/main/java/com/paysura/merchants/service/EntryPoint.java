@@ -2,7 +2,9 @@ package com.paysura.merchants.service;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.paysura.merchants.interfaces.IAlgorithmClient;
@@ -10,6 +12,9 @@ import com.paysura.merchants.interfaces.IDatabaseClient;
 import com.paysura.merchants.interfaces.IMessagingClient;
 import com.paysura.merchants.interfaces.IRestClient;
 import com.paysura.merchants.model.RequestModel;
+
+import javafx.beans.value.WritableSetValue;
+import javafx.beans.value.WritableValue;
 
 public class EntryPoint implements RequestHandler<RequestModel, String> {
 
@@ -45,8 +50,17 @@ public class EntryPoint implements RequestHandler<RequestModel, String> {
 	@Override
 	public String handleRequest(RequestModel merchantRequest, Context context) {
       
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		String merchantRequestAsString= null;
+		try {
+			merchantRequestAsString= mapper.writeValueAsString(merchantRequest);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		
+		System.out.println(merchantRequestAsString);
 		return null;
 
 	}

@@ -2,8 +2,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.serverless</groupId>
-  <artifactId>demo</artifactId>
+  <groupId>com.paysura.service</groupId>
+  <artifactId>merchants</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
@@ -56,10 +56,7 @@
     </dependencies>
   </dependencyManagement>
 
-  <dependencies>
-  <!-- https://mvnrepository.com/artifact/org.json/json -->
-  
-
+  <dependencies> 
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
