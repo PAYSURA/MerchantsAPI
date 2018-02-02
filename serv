@@ -5,8 +5,8 @@ Resources:
   EntryPoint:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: 
-      CodeUri: 
+      Handler: com.paysura.merchants.service.EntryPoint
+      CodeUri: ./target/merchants-1.0.0-shaded.jar
       Runtime: java8
       Timeout: 60
       MemorySize: 256
@@ -15,8 +15,6 @@ Resources:
           TABLE_NAME: !Ref DataTable
           QUEUE_NAME: !Ref SQSQueue
           REGION_NAME: "eu-central-1"
-          API_KEY:  ""
-          API:""
       Policies:
         - AWSLambdaExecute
         - DynamoDBCrudPolicy:
@@ -40,3 +38,11 @@ Resources:
         WriteCapacityUnits: 5
   SQSQueue:      
     Type: "AWS::SQS::Queue"
+    
+    
+    
+    
+
+
+        
+        
