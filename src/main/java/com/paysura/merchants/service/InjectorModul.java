@@ -16,9 +16,7 @@ import com.paysura.merchants.interfaces.IRestClient;
 public class InjectorModul extends AbstractModule {
 
 	@Override
-  protected void configure() {
-	  
-	  bind(ObjectMapper.class).to(ObjectMapper.class);
+  protected void configure() { 
   }
 
 	public static final String API_KEY = System.getenv("API_KEY");
