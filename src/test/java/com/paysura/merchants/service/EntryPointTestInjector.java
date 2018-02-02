@@ -6,8 +6,11 @@ import com.paysura.merchants.interfaces.IAlgorithmClient;
 import com.paysura.merchants.interfaces.IDatabaseClient;
 import com.paysura.merchants.interfaces.IMessagingClient;
 import com.paysura.merchants.interfaces.IRestClient;
-
+import com.paysura.merchants.model.MerchantsRequestModel;
+import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+
+import org.mockito.Mockito;
 
 public class EntryPointTestInjector extends AbstractModule {
 
@@ -36,6 +39,7 @@ public class EntryPointTestInjector extends AbstractModule {
 	@Provides
 	IAlgorithmClient provideAlgorithmClient() {
 		IAlgorithmClient algorithmClient = mock(IAlgorithmClient.class);
+		when(algorithmClient.calcIPC(Mockito.any( MerchantsRequestModel.class))).thenReturn(5.0);
 		return algorithmClient;
 	}
 
