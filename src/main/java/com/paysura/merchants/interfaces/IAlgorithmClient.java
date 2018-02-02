@@ -1,9 +1,7 @@
 package com.paysura.merchants.interfaces;
 
-import java.math.BigDecimal;
-
-import com.paysura.merchants.model.RequestModel;
+import com.paysura.merchants.model.MerchantsRequestModel;
 
 public interface IAlgorithmClient {
-	public BigDecimal calcIPC(RequestModel request);
+	public double calcIPC(MerchantsRequestModel request);
 }
