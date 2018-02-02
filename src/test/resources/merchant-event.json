@@ -1,0 +1,12 @@
+{
+  "price" : 50.0,
+  "ipcRateInCent" : 2.0,
+  "remainingIPC" : 2,
+  "minProfitInPercent" : 3.0,
+  "increase" : 4.0,
+  "loyaltyTimeLimit" : 2,
+  "loyaltyBonusInPercent" : 3.0,
+  "lastPurchaseDate" : null,
+  "currentBonusCampaign" : 4.0,
+  "logBase" : 3.0
+}

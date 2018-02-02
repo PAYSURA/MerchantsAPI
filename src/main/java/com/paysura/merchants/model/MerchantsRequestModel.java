@@ -3,7 +3,7 @@ package com.paysura.merchants.model;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
-public class RequestModel {
+public class MerchantsRequestModel {
 
 	double price;
 	double ipcRateInCent;
