@@ -25,7 +25,7 @@ public class EntryPointTest {
 
 
 	@Test
-	public void pumpServiceReturnsMasterDataTest() throws JsonProcessingException, IOException {
+	public void EntryPointTest() throws JsonProcessingException, IOException {
 		Context ctx = createContext();
 		Injector injector = Guice.createInjector(new EntryPointTestInjector());
 		handler = new EntryPoint(injector);
